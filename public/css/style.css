@@ -10,8 +10,14 @@
 
 }
 
+.x-nav{
+  list-style: "-";
+}
 
-
+.x-nav-footer-text{
+ font-size: 12px;
+ padding-left: 6px;
+}
 
 @media (min-width: 992px) {
     .x-form-control{
@@ -28,3 +34,89 @@
         width: 700px !important;
     }
   }
+
+  .x-text-copy{
+    font-size: 12px;
+  }
+
+
+
+  .x-text-fs1{
+    font-size: 10px;
+  }
+
+  .x-text-fs2{
+    font-size: 12px;
+  }
+  .x-text-fs3{
+    font-size: 14px;
+  }
+  .x-text-fs4{
+    font-size: 16px;
+  }
+  .x-text-fs5{
+    font-size: 18px;
+  }
+  .x-text-fs6{
+    font-size: 20px;
+  }
+  .x-text-fs7{
+    font-size: 22px;
+  }
+  .x-text-fs8{
+    font-size: 24px;
+  }
+  .x-text-1{
+    font-size: 26px;
+  }
+  .x-text-1{
+    font-size: 30px;
+  } 
+  
+
+  .x-card-bestseller-img{
+    height: 220px;
+    object-fit: cover;
+    background-color: #525d6a;
+  }
+
+  
+  .x-products-img{
+    height: 220px;
+    object-fit: cover;
+    background-color: #525d6a;
+  }
+
+
+  .x-btn-products{
+    border-color: #198754;
+    color: #000000;
+  }
+  .x-btn-products:hover {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754 !important;
+  }
+
+
+  .x-colproducts{
+    flex: 0 0 auto;
+    width: 16.6666666666666666%;
+  }
+
+
+  .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  
+}
+
+.carousel-indicators .active{
+  background-color: #ffc107;
+
+}
+
+.x-colproducts-card:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}

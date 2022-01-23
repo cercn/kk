@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('accueil');
 });
 
+Route::get('/connexion', function () {
+    return view('authentification.login');
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
