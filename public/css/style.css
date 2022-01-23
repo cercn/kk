@@ -9,3 +9,22 @@
     background-color: #525d6a;
 
 }
+
+
+
+
+@media (min-width: 992px) {
+    .x-form-control{
+        width:440px !important;
+    }
+  }
+  @media (min-width: 1200px) {
+    .x-form-control{
+        width: 600px !important;
+    }
+  }
+  @media (min-width: 1400px) {
+    .x-form-control{
+        width: 700px !important;
+    }
+  }

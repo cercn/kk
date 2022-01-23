@@ -17,9 +17,9 @@
     
     <main>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white text-black">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white text-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">XANOUMI .com</a>
+    <a class="navbar-brand" href="#"><span class="text-warning">XANOUMI</span> .com</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,9 +27,9 @@
       <ul class="navbar-nav mx-auto">
           <div class="col-12">
           <form action="">
-       <div class="input-group mb-3 rounded-pill">
-  <input type="search" class="form-control border-end-0 rounded-pill" placeholder="De quoi avez-vous besoin ?"  aria-describedby="basic-addon2">
-  <span class="input-group-text bg-white border-start-0 rounded-pill " id="basic-addon2"><i class="fas fa-search"></i></span>
+       <div class="input-group rounded-pill">
+  <input type="search" class="form-control  rounded-pill x-form-control" placeholder="De quoi avez-vous besoin ?" >
+  <span class="input-group-text bg-white ms-2 rounded-pill "><i class="fas fa-search"></i></span>
 </div>       
     </form>
           </div>
@@ -38,9 +38,9 @@
     
       </ul>
       <ul class="nav ms-auto" >
-          <li class="nav-item"><a href="" class="nav-link text-black"> <i class="fas fa-user"></i> Connexion </a></li>
-          <li class="nav-item"><a href="" class="nav-link text-black"> <i class="fas fa-boxes"></i> Panier </a></li>
-          <li class="nav-item"><a href="" class="nav-link text-black"> <i class="fas fa-question-circle"></i> Aide </a></li>
+          <li class="nav-item"><a href="" class="nav-link text-dark"> <i class="fas fa-user"></i> Connexion </a></li>
+          <li class="nav-item"><a href="" class="nav-link text-dark"> <i class="fas fa-boxes"></i> Panier </a></li>
+          <li class="nav-item"><a href="" class="nav-link text-dark"> <i class="fas fa-question-circle"></i> Aide </a></li>
 
       </ul>
     </div>
@@ -94,7 +94,7 @@
     <section class="bg-light p-2">
         <div class="container-fluid bg-white p-3">
             <div class="d-flex align-items-center">
-                <h2 class="text-black">Meilleures ventes tech</h2>
+                <h2 class="text-dark">Meilleures ventes tech</h2>
                 <div>
                     <a href="" class="text-warning text-decoration-none ms-2">Voir plus</a>
                 </div>
@@ -107,7 +107,7 @@
     <section class="bg-light p-2">
         <div class="container-fluid bg-white p-3">
             <div class="d-flex align-items-center">
-                <h2 class="text-black">Les différentes catégories</h2>
+                <h2 class="text-dark">Les différentes catégories</h2>
                 <div>
                     <a href="" class="text-warning text-decoration-none ms-2">Voir plus</a>
                 </div>
@@ -115,7 +115,7 @@
 
             <div class="row">
                 <div class="col">
-                    <a href="" class="text-black text-decoration-none border-success">Electromenagers <i class="fas fa-chevron-right"></i> </a>
+                    <a href="" class="text-dark text-decoration-none border-success">Electromenagers <i class="fas fa-chevron-right"></i> </a>
                 </div>
             </div>
             
@@ -128,7 +128,7 @@
     <section class="bg-light p-2">
         <div class="container-fluid bg-white p-3">
             <div class="d-flex align-items-center">
-                <h2 class="text-black">Meilleures ventes tech</h2>
+                <h2 class="text-dark">Meilleures ventes tech</h2>
                 <div>
                     <a href="" class="text-warning text-decoration-underline ms-2">Voir plus</a>
                 </div>
@@ -141,7 +141,7 @@
     <section class="bg-light p-2">
         <div class="container-fluid bg-white p-3">
             <div class="d-flex align-items-center">
-                <h2 class="text-black">Meilleures ventes tech</h2>
+                <h2 class="text-dark">Meilleures ventes tech</h2>
                 <div>
                     <a href="" class="text-warning text-decoration-underline ms-2">Voir plus</a>
                 </div>
@@ -153,10 +153,12 @@
 
     
     
-
+    <footer class="bg-light p-5">
+        
+    </footer>
 
     <!-- JavaScript -->
 
-    <script src="{{ asset('js/bootstrap.bundle.min.js')"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
