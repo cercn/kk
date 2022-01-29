@@ -15,12 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('accueil');
-});
+})->name('accueil');
 
-Route::get('/connexion', function () {
-    return view('authentification.login');
-});
+Route::get('/login', function () {
+    return view('customAuth.login');
+})->name('login');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::get('/categories/{categorie}', function () {
+    return view('categories.index');
+})->name('categorie');
+
+Route::get('/categories/{categorie}/1', function () {
+    return view('products.index');
+})->name('product');
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
