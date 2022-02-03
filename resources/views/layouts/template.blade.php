@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/all.css')}}">
+
+     @stack('stylesheets')
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
    
 </head>
@@ -43,5 +45,6 @@
     <!-- JavaScript -->
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

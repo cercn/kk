@@ -148,3 +148,8 @@ background-image: url('../img/auth.png');
   object-fit: cover;
 
 }
+
+.x-product-iframe{
+  width: 700px !important;
+  height: 400px !important;
+}
