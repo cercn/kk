@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="location de véhicules">
     <meta name="author" content="AutomobileHouse">
-    <title>AutomobileHouse | @yield('title', 'Dashboard')</title>
+    <title>XANOUMI | @yield('title', 'Dashboard')</title>
     <!-- Favicon -->
     <!-- <link rel="icon" href="{{ asset('dashboard/img/brand/favicon.png" type="image/png')}}"> -->
     <!-- Fonts -->
@@ -63,22 +63,36 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-car" aria-hidden="true"></i> Vehicules <i class="fa fa-chevron-right ml-i" ></i>
+                                <i class="fa fa-archive" aria-hidden="true"></i> Produits <i class="fa fa-chevron-right ml-i" ></i>
                             </a>
                             <div class="dropdown-menu  dropdown-menu-right ">
 
-                                <a href="{{ route('vehicules.create') }}" class="dropdown-item">
-                                    <i class="fa fa-car" aria-hidden="true"></i>
-                                    <span>nouveau vehicule </i></span>
+                                <a href="{{ route('products.create') }}" class="dropdown-item">
+                                    <i class="fa fa-archive" aria-hidden="true"></i>
+                                    <span>nouveau produit </i></span>
                                   </a>
                               <div class="dropdown-divider"></div>
-                              <a href="{{ route('vehicules.index') }}" class="dropdown-item">
-                                <i class="fa fa-car" aria-hidden="true"></i>
-                                <span>Tous les vehicules</span>
+                              <a href="{{ route('products.index') }}" class="dropdown-item">
+                                <i class="fa fa-archive" aria-hidden="true"></i>
+                                <span>Tous les produits</span>
                               </a>
                             </div>
                           </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="nav-link-text">Ventes</span>
+                            </a>
+                        </li>
 
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                <span class="nav-link-text">Stocks</span>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users')}}">
@@ -87,12 +101,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('allrent') }}">
-                                <i class="fa fa-th" aria-hidden="true"></i>
-                                <span class="nav-link-text">Location</span>
-                            </a>
-                        </li>
+                        
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -233,7 +242,7 @@
                 <div class="row align-items-center justify-content-lg-between">
                     <div class="col-lg-6">
                         <div class="copyright text-center  text-lg-left  text-muted">
-                            &copy; 2021 <a href="" class="font-weight-bold ml-1 text-dark" target="_blank">AutomobileHouse</a>
+                            &copy; 2022 <a href="" class="font-weight-bold ml-1 text-dark" target="_blank"> <span class="text-warning">XANOUMI</span> .com </a>
                         </div>
                     </div>
 

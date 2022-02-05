@@ -39,18 +39,17 @@
 
 <main>
  <div class="container-fluid bg-success py-5 x-auth-container">
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-5 p-2 px-3">
-                <div class="bg-white h-100">
+    <div class="container py-5 d-flex justify-content-center">
+        <div class="row d-flex align-items-center">
+            <div class="col-4">
+                
                 @yield('content')
-                </div>
               
             </div>
 
-            <div class="col-7 p-5 text-white">
-                <h2 class="fs-4">Des offres disponibles pour <br> toutes les bourses</h2>
-                <div>Le meilleur endroit pour faire vos achats</div>
+            <div class="col-8 p-5 text-white">
+                <h1 class="">Des offres disponibles pour  toutes les bourses</h1>
+                <div class="x-text-fs6">Le meilleur endroit pour faire vos achats</div>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\VehiculeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\UserController;
@@ -28,13 +28,10 @@ Route::get('/', function () {
 // })->name('login');
 
 
-Route::get('/categories/{categorie}', function () {
-    return view('categories.index');
-})->name('categorie');
+Route::get('/categories/{categorie}', [GuestController::class,'category'])->name('categorie');
 
-Route::get('/categories/{categorie}/1', function () {
-    return view('products.index');
-})->name('product');
+
+Route::get('/produits/{product}',[GuestController::class,'infoProduct'])->name('produit');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -42,11 +39,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 Route::get('/',[GuestController::class,'index'])->name('accueil');
-// Route::get('/detail_voiture/{vehicule}',[GuestController::class,'detail_voiture'])->name('detail_voiture');
-// Route::get('/location_de_la_voiture/{vehicule}',[GuestController::class,'rent'])->name('rentcar');
-// Route::post('/location_de_la_voiture/{vehicule}/user/{user}',[GuestController::class,'verifyAvalaible'])->name('rent_car');
-// Route::get('/voitures',[GuestController::class,'cars'])->name('voitures');
-// Route::get('/mon_historique/{user}',[GuestController::class,'historique'])->name('historique');
+
 
 
 Route::middleware(['admin:admin'])->group(function(){
@@ -56,7 +49,7 @@ Route::middleware(['admin:admin'])->group(function(){
 
     Route::resource('/categorie',CategorieController::class); 
 
-    Route::resource('/vehicules',VehiculeController::class);
+    Route::resource('/products',ProductController::class);
 
     Route::get('/utilisateurs',[UserController::class,'index'])->name('users');
 

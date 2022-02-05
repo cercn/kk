@@ -17,7 +17,6 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('libelle');
             $table->text('description');
-            $table->string('file',100);
             $table->timestamps();
         });
     }

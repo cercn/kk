@@ -38,20 +38,14 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('file_categorie'))
-        {
-            $image = $request->file('file_categorie');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('/img'), $imageName);
-            $actualPath = '/img/'.$imageName;
+      
             $categorie = New Categorie;
-            $categorie->file = $actualPath;
             $categorie->libelle = $request->input('nom');
             $categorie->description = $request->input('desc_categorie');
             $categorie->save();
 
             return redirect()->route('categorie.create');
-        }
+      
     }
 
     /**

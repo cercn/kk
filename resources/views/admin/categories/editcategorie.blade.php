@@ -27,17 +27,12 @@
                        
 
                       
-                            <div class="form-group">
-                                <label class="form-control-label" for="file">Image </label>
-                    
-                               <input type="file" name="file_categorie" accept=".png,.jpg,.jpeg" id="file" class="form-control" placeholder="{{ $cat->file }}">
-                            </div>
-                            
+                          
 
                             <div class="form-group">
                                 <label class="form-control-label" for="desc">Description</label>
                     
-                               <textarea name="desc_categorie" id="desc" class="form-control" >{{ $cat->description }}</textarea>
+                               <textarea name="desc_categorie" id="desc" rows="8" class="form-control" >{{ $cat->description }}</textarea>
                             </div>              
                             
                             
