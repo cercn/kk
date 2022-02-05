@@ -38,7 +38,7 @@
 </header>
 
 <main>
- <div class="container-fluid bg-success py-5 x-auth-container">
+ <div class="container-fluid py-5 x-auth-container">
     <div class="container py-4 d-flex justify-content-center">
         <div class="row d-flex align-items-center">
             <div class="col-4">
