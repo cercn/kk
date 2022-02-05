@@ -88,23 +88,16 @@ class CategorieController extends Controller
     {
       $cat=$categorie;
 
-        if ($request->hasFile('file_categorie'))
-        {
-            $image = $request->file('file_categorie');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('/img'), $imageName);
-            $actualPath = '/img/'.$imageName;
-            
+      
             $categorie = Categorie::find($cat);
-
+            
             $categorie->libelle=$request->input('nom');
-            $categorie->file = $actualPath;
             $categorie->description = $request->input('desc_categorie');
             $categorie->save();
                     
             $categories=Categorie::all();
             return view('admin.categories.listcategorie',compact('categories'));
-        }
+       
     }
 
     /**
