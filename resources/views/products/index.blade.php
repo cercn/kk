@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <section class="container-fluid bg-light d-flex flex-column align-items-center justify-content-center py-4">
+    <section class="container-fluid bg-light d-flex flex-column align-items-center justify-content-center py-5">
         <h1 class="fs-3">{{ $product->nom }}</h1>
         <div class="d-flex justify-content-center">
             <div class="bg-warning x-deco"></div>
