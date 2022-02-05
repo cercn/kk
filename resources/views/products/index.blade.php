@@ -45,7 +45,7 @@
 
                 <h3 class="x-text-fs4 ">PRIX</h3>
 
-                <h2 class="x-text-size-xs">{{ $product->nom . ' XOF' }}</h2>
+                <h2 class="x-text-size-xs">{{ $product->prix.' XOF' }}</h2>
 
                 <a href="" class="btn btn-warning rounded-pill p-1 px-3 text-white mb-3"> Ajouter au panier</a>
 
