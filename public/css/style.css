@@ -121,9 +121,7 @@
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
 
-.x-auth-container{
-  height: calc(100vh - 203px);
-}
+
 
 .x-name-banner{
   position: absolute;
