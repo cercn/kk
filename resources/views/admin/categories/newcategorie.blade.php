@@ -68,8 +68,9 @@
                             @foreach ($categories as $categorie)
 
                                 <tr>
-                                    <td>{{ $categorie->description }}</td>
                                     <td>{{ $categorie->libelle }}</td>
+                                    <td>{{ $categorie->description }}</td>
+
 
                                     <td>
 
