@@ -85,14 +85,12 @@ class GuestController extends Controller
     }
 
 
-    public function allcategory(){
+    public function listcategories(){
         $categories=Categorie::all();
         return view('categories.list',[
             'categories' => $categories,
             
-         ]);
-
-  
+         ]);  
     }
 
 

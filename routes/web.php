@@ -21,7 +21,7 @@ use App\Http\Controllers\RentController;
 
 Route::get('/',[GuestController::class,'index'])->name('accueil');
 
-Route::get('/toutesnoscategories',[GuestController::class,'allcategory'])->name('allcategories');
+Route::get('/toutesnoscategories',[GuestController::class,'listcategories'])->name('allcategories');
 
 Route::get('/categories/{categorie}', [GuestController::class,'category'])->name('categorie');
 
