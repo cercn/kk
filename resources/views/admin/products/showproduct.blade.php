@@ -28,7 +28,7 @@
                         allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
                         execution-while-out-of-viewport execution-while-not-rendered web-share
                         src="{{$product->link3D.'?ui_infos=0&ui_inspector=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_annotations=0'}}"
-                        class="x-product-iframe"> </iframe> </div>
+                        class="x-iframe"> </iframe> </div>
                 @else
               <img src="{{ $product->image}}" alt="{{ $product->modele }}" class="img-fluid">
               @endisset
