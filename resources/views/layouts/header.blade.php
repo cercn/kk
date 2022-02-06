@@ -45,7 +45,7 @@
         @foreach ($categories as $categorie)
             <li class="nav-item"><a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}" class="nav-link text-white">{{ $categorie->libelle }}</a></li>
         @endforeach
-        <li class="nav-item"><a href="" class="nav-link text-white">Toutes les categories</a></li>
+        <li class="nav-item"><a href="{{ route('allcategories') }}" class="nav-link text-white">Toutes les categories</a></li>
     @endif
 
 </ul>
