@@ -43,14 +43,6 @@ class GuestController extends Controller
         }
         
 
-        dd($categories);
-        dd($cmostselleds);
-
-        dd($cmostasks);
-
-        dd($cbestoffers);
-
-
         return view('accueil',[
             'categories' => $categories,
             'cmostselleds'=> $cmostselleds,
