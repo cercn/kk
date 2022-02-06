@@ -52,7 +52,7 @@
 
               <div class="x-text-fs2">{{ $product->description }}</div>
 
-              <div class="x-text-fs2">Lien 3D : {{ $product->link3D }}</div>
+              <div class="x-text-fs1 text-success">Lien 3D : {{ $product->link3D }}</div>
           </div>
 
         </div>
