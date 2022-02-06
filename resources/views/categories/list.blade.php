@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="container-fluid bg-light d-flex flex-column align-items-center justify-content-center py-5">
-        <h1 class="x-text-size-sm fs-3 text-uppercase">{{ _('Toutes les catégories')}}</h1>
+        <h1 class="x-text-size-sm fs-3 text-uppercase">Toutes les catégories</h1>
         <div class="d-flex justify-content-center">
             <div class="bg-warning  x-deco"></div>
         </div>
