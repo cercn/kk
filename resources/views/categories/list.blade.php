@@ -13,8 +13,8 @@
 
     <div class="row py-5 px-3">
 
-                @if (sizeof($categories) > 0)
-                    @foreach ($categories as $categorie)
+                @if (sizeof($categoriesall) > 0)
+                    @foreach ($categoriesall as $categorie)
                         <div class="col-2 mb-3">
                             <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
                                 class="btn x-btn-products x-text-fs4 px-3 w-100 py-2">{{ $categorie->libelle }} <i
