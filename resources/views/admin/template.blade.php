@@ -28,7 +28,7 @@
             .xanoumi-circle{
   position: absolute;
     bottom: 5px;
-    left: 92px;
+    left: 13px;
     width: 134px;
     height: 50px;
     background-color: #fff;
