@@ -19,11 +19,10 @@ use App\Http\Controllers\RentController;
 |
 */
 
-Route::get('/', function () {
-    return view('accueil');
-})->name('accueil');
+Route::get('/',[GuestController::class,'index'])->name('accueil');
 
 Route::get('/toutesnoscategories',[GuestController::class,'allcategory'])->name('allcategories');
+
 Route::get('/categories/{categorie}', [GuestController::class,'category'])->name('categorie');
 
 Route::get('/produits/{product}',[GuestController::class,'infoProduct'])->name('produit');
@@ -33,7 +32,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::get('/',[GuestController::class,'index'])->name('accueil');
+
 
 
 
