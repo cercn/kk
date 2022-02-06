@@ -40,6 +40,8 @@
               <h3 class="font-weight-bold mt-3 text-warning">Description du produit:</h3>
 
               <div class="x-text-fs2">{{ $product->description }}</div>
+
+              <div class="x-text-fs2">Lien 3D : {{ $product->link3D }}</div>
           </div>
 
         </div>
