@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('accueil');
 })->name('accueil');
 
-Route::get('/categories',[GuestController::class,'allcategory'])->name('allcategories');
+Route::get('/categories/all/categories',[GuestController::class,'allcategory'])->name('allcategories');
 Route::get('/categories/{categorie}', [GuestController::class,'category'])->name('categorie');
 
 Route::get('/produits/{product}',[GuestController::class,'infoProduct'])->name('produit');
