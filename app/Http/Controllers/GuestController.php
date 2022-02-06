@@ -11,7 +11,7 @@ use App\Models\User;
 
 class GuestController extends Controller
 {
-    public function index (){
+    public function index(){
         $categories=Categorie::all()->take(7);
         $c_mostselleds = Categorie::Where('libelle','meilleures ventes')->get()->first();
         $c_mostasks = Categorie::Where('libelle','plus demandés')->get()->first();
@@ -43,6 +43,12 @@ class GuestController extends Controller
         }
         
 
+        dd($categories);
+        dd($cmostselleds);
+
+        dd($cmostasks);
+
+        dd($cbestoffers);
 
 
         return view('accueil',[
