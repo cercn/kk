@@ -18,6 +18,13 @@
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('dashboard/css/argon.css?v=1.2.0')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('dashboard/css/dashboard.css') }}">
+
+    <style>
+            .x-iframe{
+             width: 100% !important;
+            height: 400px !important;
+            }
+    </style>
 </head>
 
 <body>
