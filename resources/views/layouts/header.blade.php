@@ -38,7 +38,7 @@
 <ul class="nav bg-warning text-white justify-content-around">
     @if (sizeof($categories) > 0)
         @foreach ($categories as $categorie)
-            <li class="nav-item"><a href="" class="nav-link text-white">{{ $categorie->libelle }}</a></li>
+            <li class="nav-item"><a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}" class="nav-link text-white">{{ $categorie->libelle }}</a></li>
         @endforeach
     @endif
 </ul>
