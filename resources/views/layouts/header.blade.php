@@ -22,8 +22,13 @@
 
             </ul>
             <ul class="nav ms-auto me-5 ">
+            @guest
                 <li class="nav-item"><a href="{{ route('login') }}" class="nav-link text-muted"> <i
                             class="fas fa-user"></i> Connexion </a></li>
+            @else
+            <li class="nav-item"><a href="{{ route('admin-panel') }}" class="nav-link text-muted"> <i
+                            class="fas fa-bars"></i> Tableau de bord </a></li>
+            @endguest
                 <li class="nav-item"><a href="" class="nav-link text-muted"> <i class="fas fa-shopping-cart"></i>
                         Panier </a></li>
                 <li class="nav-item "><a href="" class="nav-link text-muted"> <i
