@@ -18,7 +18,9 @@
       </div>
       <div class="card-body">
         <div class="row">
-        <div class="col-6">
+        <div class="col-6 position-relative">
+                       <div class="xanoumi-circle d-flex align-items-center justify-content-center fw-bold" > <span class="text-warning" >XANOUMI</span> .com </div>
+
             <span class="badge badge-c-success badge-custom border-0">{{ $product->link3D ? ' 3D' : 'Image' }}</span>
             @isset($product->link3D)
  <div class="sketchfab-embed-wrapper "> <iframe title="[FREE] BAPE x Reebok Club C 85 White Sneaker"

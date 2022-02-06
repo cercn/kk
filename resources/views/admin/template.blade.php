@@ -24,6 +24,15 @@
              width: 100% !important;
             height: 400px !important;
             }
+
+            .xanoumi-circle{
+  position: absolute;
+    bottom: 5px;
+    left: 92px;
+    width: 134px;
+    height: 50px;
+    background-color: #fff;
+}
     </style>
 </head>
 
