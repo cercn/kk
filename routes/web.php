@@ -23,14 +23,9 @@ Route::get('/', function () {
     return view('accueil');
 })->name('accueil');
 
-// Route::get('/login', function () {
-//     return view('customAuth.login');
-// })->name('login');
-
-
+Route::get('/categories',[GuestController::class,'allcategory'])->name('allcategories');
 Route::get('/categories/{categorie}', [GuestController::class,'category'])->name('categorie');
 
-Route::get('/categories/toutes_les_categories',[GuestController::class,'allcategory'])->name('allcategories');
 Route::get('/produits/{product}',[GuestController::class,'infoProduct'])->name('produit');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
