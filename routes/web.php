@@ -30,7 +30,7 @@ Route::get('/', function () {
 
 Route::get('/categories/{categorie}', [GuestController::class,'category'])->name('categorie');
 
-
+Route::get('/categories',[GuestController::class,'allcategory'])->name('categories');
 Route::get('/produits/{product}',[GuestController::class,'infoProduct'])->name('produit');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

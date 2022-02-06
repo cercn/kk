@@ -32,7 +32,7 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav>-
 
 
 <ul class="nav bg-warning text-white justify-content-around">

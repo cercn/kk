@@ -49,7 +49,7 @@
                     <div class="d-flex justify-content-evently">
                       <a href="{{ route('products.show' , ['product'=>$product->id]) }}" class=" mr-2 btn btn-sm btn-primary"><i class="fa fa-eye"></i></a>
                       <a href="{{ route('products.edit' , ['product'=>$product->id]) }}" class=" mr-2 btn btn-sm btn-success"><i class="fa fa-pencil-alt"></i></a>
-                      <a href="" class="btn btn-sm btn-danger " type="button" data-toggle="modal" data-target="#{!!  \Illuminate\Support\Str::words($product->modele, 1, '') !!}"><i class="fa fa-trash"></i></a>
+                      <a href="" class="btn btn-sm btn-danger " type="button" data-toggle="modal" data-target="#{!!  \Illuminate\Support\Str::words($product->nom, 1, '') !!}"><i class="fa fa-trash"></i></a>
                     </div>
 
                  {{-- \Illuminate\Support\Str::words pour
@@ -59,7 +59,7 @@
 
                  <div class="modal fade"
                     
-                     tabindex="-1" role="dialog" id="{!!  \Illuminate\Support\Str::words($product->modele, 1, '') !!}"
+                     tabindex="-1" role="dialog" id="{!!  \Illuminate\Support\Str::words($product->nom, 1, '') !!}"
                      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                      <div class="modal-dialog modal-dialog-centered" role="document">
                          <div class="modal-content">

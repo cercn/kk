@@ -39,11 +39,13 @@
 
     <section class="bg-light  pt-5">
         <div class="container-fluid bg-white p-3 ">
-            <div class="d-flex align-items-center mb-3">
+            <div class="d-flex align-items-center justify-content-between mb-3">
                 <h2 class="text-dark x-text-fs7 text-uppercase">Nos meilleures ventes</h2>
                 <div>
+                @if (sizeof($cmostselleds) > 0)
                     <a href="{{ route('categorie', ['categorie' => 'meilleures ventes']) }}"
                         class="text-warning text-decoration-none ms-3">Voir plus</a>
+                 @endif
                 </div>
             </div>
         </div>
@@ -90,9 +92,11 @@
 
     <section class="bg-white p-2">
         <div class="container-fluid bg-white p-3 ">
-            <div class="d-flex align-items-center mb-3">
+            <div class="d-flex align-items-center justify-content-between mb-3">
                 <h2 class="text-dark x-text-fs7 text-uppercase">Nos différentes catégories</h2>
-               
+                @if (sizeof($categories) > 1)
+                <a href="{{ route('categories')}}" class="btn btn-warning text-white text-decoration-none"> Toutes les catégories</a>
+                @endif
             </div>
 
             <div class="row ">
@@ -143,12 +147,14 @@
 
     <section class="bg-white p-2 py-3">
         <div class="container-fluid bg-white p-3 ">
-            <div class="d-flex align-items-center mb-3">
+            <div class="d-flex align-items-center justify-content-between mb-3">
                 <h2 class="text-dark x-text-fs7 text-uppercase">Les plus demandés</h2>
                 <div>
+                @if (sizeof($mostasks) > 0)
                     <a href="{{ route('categorie', ['categorie' => 'plus demandes']) }}"
-                        class="text-warning text-decoration-none ms-3">Voir plus</a>
-                </div>
+                        class="btn btn-success text-white text-decoration-none ms-3">Voir plus</a>
+                @endif
+                    </div>
             </div>
         </div>
 
