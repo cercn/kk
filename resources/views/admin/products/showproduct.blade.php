@@ -20,7 +20,16 @@
         <div class="row">
         <div class="col-6">
             <span class="badge badge-c-success badge-custom border-0">{{ $product->link3D ? ' 3D' : 'Image' }}</span>
+            @isset($product->link3D)
+ <div class="sketchfab-embed-wrapper "> <iframe title="[FREE] BAPE x Reebok Club C 85 White Sneaker"
+                        frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                        execution-while-out-of-viewport execution-while-not-rendered web-share
+                        src="{{$product->link3D.'?ui_infos=0&ui_inspector=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_annotations=0'}}"
+                        class="x-product-iframe"> </iframe> </div>
+                @else
               <img src="{{ $product->image}}" alt="{{ $product->modele }}" class="img-fluid">
+              @endisset
         </div>
 
           <div class="col-6 text-dark">

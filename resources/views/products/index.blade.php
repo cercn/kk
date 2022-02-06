@@ -25,7 +25,7 @@
                 @else
                                     <img src="{{ asset($product->image) }}" alt="" class="x-product-img">
 
-                @endif
+                @endisset
             </div>
 
             <div class="col-5">
