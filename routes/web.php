@@ -27,14 +27,9 @@ Route::get('/categories/{categorie}', [GuestController::class,'category'])->name
 
 Route::get('/produits/{product}',[GuestController::class,'infoProduct'])->name('produit');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-
-
-
-
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 Route::middleware(['admin:admin'])->group(function(){
 
