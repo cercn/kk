@@ -95,7 +95,7 @@
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <h2 class="text-dark x-text-fs7 text-uppercase">Nos différentes catégories</h2>
                 @if (sizeof($categories) > 1)
-                <a href="{{ route('categories')}}" class="btn btn-warning text-white text-decoration-none"> Toutes les catégories</a>
+                <a href="{{ route('allcategories')}}" class="btn btn-warning text-white text-decoration-none"> Toutes les catégories</a>
                 @endif
             </div>
 

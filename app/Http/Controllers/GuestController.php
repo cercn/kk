@@ -12,7 +12,7 @@ use App\Models\User;
 class GuestController extends Controller
 {
     public function index (){
-        $categories=Categorie::all()->take(16);
+        $categories=Categorie::all()->take(8);
         $c_mostselleds = Categorie::Where('libelle','meilleures ventes')->get()->first();
         $c_mostasks = Categorie::Where('libelle','plus demandés')->get()->first();
         $c_bestoffers = Categorie::Where('libelle','meilleures offres')->get()->first();
@@ -56,7 +56,7 @@ class GuestController extends Controller
 
     public function category($categorie){
 
-        $categories=Categorie::all()->take(16);
+        $categories=Categorie::all()->take(8);
         $category = Categorie::Where('libelle',$categorie)->get()->first();
         if($category != null){
             $products = Product::Where('categorie_id',$category->id)->get();
@@ -74,7 +74,7 @@ class GuestController extends Controller
     }
 
     public function infoProduct($id){
-        $categories=Categorie::all()->take(16);
+        $categories=Categorie::all()->take(8);
         $product = Product::find($id);
 
         return view('products.index',[

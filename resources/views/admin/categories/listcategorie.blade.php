@@ -63,7 +63,7 @@
                                                     <div class="modal-body">
 
                                                         <form id="delete-reponse"
-                                                            action="{{ route('categorie.destroy', ['categorie' => $categorie->id]) }}"
+                                                            action="{{ route('categorie.destroy', ['categorie' => $categorie]) }}"
                                                             method="POST"> @csrf
                                                             @method('DELETE')
 
