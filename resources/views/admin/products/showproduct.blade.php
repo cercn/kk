@@ -30,7 +30,7 @@
                         src="{{$product->link3D.'?ui_infos=0&ui_inspector=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_annotations=0'}}"
                         class="x-iframe"> </iframe> </div>
                 @else
-              <img src="{{ $product->image}}" alt="{{ $product->modele }}" class="img-fluid">
+              <img src="{{ asset($product->image) }}" alt="{{ $product->modele }}" class="img-fluid">
               @endisset
         </div>
 
