@@ -1,5 +1,12 @@
 @extends('layouts.template')
+@push('stylesheets')
+
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+
+@endpush
 @section('content')
+<div class="xd">
     <section class="position-relative">
 
         <div class="fs-1 text-bold x-name-banner text-white"><span class="text-warning">XANOUMI</span> .com</div>
@@ -219,5 +226,71 @@
 
 
     </section>
+</div>
+
 
 @endSection
+
+@push('scripts')
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            var owlstandard = $('.owlstandard');
+            var owlactivites = $('.owlactivites');
+
+            owlstandard.owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+
+            owlactivites.owlCarousel({
+                loop: true,
+                nav: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+            $('.owlstandardBtnLeft').click(function() {
+                owlstandard.trigger('next.owl.carousel');
+            });
+
+            $('.owlstandardBtnRight').click(function() {
+                owlstandard.trigger('prev.owl.carousel');
+            });
+
+            $('.owlactivitesBtnLeft').click(function() {
+                owlactivites.trigger('next.owl.carousel');
+            });
+
+            $('.owlactivitesBtnRight').click(function() {
+                owlactivites.trigger('prev.owl.carousel');
+            });
+
+
+        });
+    </script>
+@endpush

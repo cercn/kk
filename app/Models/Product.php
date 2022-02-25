@@ -14,7 +14,7 @@ class Product extends Model
 
     protected $fillable = [
         'id',
-        'modele',
+        'nom',
         'marque',
         'prix',
         'description',
@@ -22,7 +22,7 @@ class Product extends Model
         'quantite',
         'carburant',
         'categorie_id',
-       
+
     ];
 
     public static $rules = [
@@ -32,10 +32,17 @@ class Product extends Model
         'prix'    => 'required|integer',
         'image'       => 'required',
         'quantite'    => 'required|integer',
-               
+
     ];
 
     public function categorie(){
         return $this->belongTo(Categorie::class);
+    }
+
+
+    public static function search($motscles){
+        $results = Product::where('nom','like','%'.$motscles.'%')
+        ->get();
+    return  $results;
     }
 }

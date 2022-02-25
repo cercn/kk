@@ -27,6 +27,9 @@ Route::get('/categories/{categorie}', [GuestController::class,'category'])->name
 
 Route::get('/produits/{product}',[GuestController::class,'infoProduct'])->name('produit');
 
+Route::post('/search',[GuestController::class,'searchProducts'])->name('searchproducts');
+
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
@@ -36,12 +39,12 @@ Route::middleware(['admin:admin'])->group(function(){
 
     Route::get('/admin',[DashboardController::class,'index'])->name('admin-panel');
 
-    Route::resource('/categorie',CategorieController::class); 
+    Route::resource('/categorie',CategorieController::class);
 
     Route::resource('/products',ProductController::class);
 
     Route::get('/utilisateurs',[UserController::class,'index'])->name('users');
 
     Route::get('/locations',[RentController::class,'index'])->name('allrent');
-    
+
 });

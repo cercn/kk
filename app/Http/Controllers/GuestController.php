@@ -16,7 +16,7 @@ class GuestController extends Controller
         $c_mostselleds = Categorie::Where('libelle','meilleures ventes')->get()->first();
         $c_mostasks = Categorie::Where('libelle','plus demandés')->get()->first();
         $c_bestoffers = Categorie::Where('libelle','meilleures offres')->get()->first();
-  
+
         if($c_mostasks != null){
             $cmostasks = Product::Where('categorie_id',$c_mostasks->id)->get()->take(6);
 
@@ -24,7 +24,7 @@ class GuestController extends Controller
         else{
             $cmostasks = [];
         }
-      
+
 
         if($c_mostselleds !=null){
             $cmostselleds = Product::Where('categorie_id',$c_mostselleds->id)->get()->take(6);
@@ -41,7 +41,7 @@ class GuestController extends Controller
         else{
             $cbestoffers = [];
         }
-        
+
 
         return view('accueil',[
             'categories' => $categories,
@@ -78,10 +78,10 @@ class GuestController extends Controller
         return view('products.index',[
             'product' => $product,
             'categories' => $categories,
-            
+
          ]);
 
-  
+
     }
 
 
@@ -91,7 +91,18 @@ class GuestController extends Controller
         return view('categories.list',[
             'categories' => $categories,
             'categoriesall' => $categoriesall
-         ]);  
+         ]);
+    }
+
+
+    public function searchProducts(Request $request){
+
+        $results = Product::search($request->product);
+
+        return view('recherche',[
+            'word' => $request->product,
+            'products' => $results
+        ]);
     }
 
 
