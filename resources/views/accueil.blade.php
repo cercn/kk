@@ -154,7 +154,7 @@
                     @endif
                 </div>
 
-                <div class="row d-desktop ">
+                <div class="row d-desktop-flex ">
 
                     @if (sizeof($categories) > 0)
                         @foreach ($categories as $categorie)
@@ -196,7 +196,7 @@
 
                 </div>
 
-                <div class="row d-desktop">
+                <div class="row d-desktop-flex">
 
                     @if (sizeof($cbestoffers) > 0)
                         @foreach ($cbestoffers as $cbestoffer)
@@ -355,7 +355,7 @@
         </section>
 
         <div class="bg-warning p-2 py-4 container-fluid"></div>
-        
+
     </div>
 @endSection
 

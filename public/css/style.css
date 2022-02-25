@@ -160,6 +160,10 @@
         width: 700px !important;
         height: 400px !important;
     }
+
+    .d-desktop-flex {
+        display: flex !important;
+    }
 }
 
 @media screen and (max-width: 769px) {
@@ -198,6 +202,10 @@
     }
 
     .d-desktop {
+        display: none !important;
+    }
+
+    .d-desktop-flex{
         display: none !important;
     }
 

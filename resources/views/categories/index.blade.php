@@ -53,32 +53,32 @@
                     @endforeach
                 @endif
 
-                   @if (sizeof($products) > 0)
+                @if (sizeof($products) > 0)
                     @foreach ($products as $product)
                         <div class="col-12 d-mobile">
 
-                                <div class="card border-0 ">
-                                @if($product->image)
+                            <div class="card border-0 ">
+                                @if ($product->image)
                                     <img src="{{ asset($product->image) }}" alt="" class="">
                                 @else
                                     <img src="{{ asset('img/defaultimg.png') }}" alt="" class="">
-
                                 @endif
-                                    <div class="card-body ps-1">
-                                        <div class="card-text mb-2">{{ $product->nom }}</div>
-                                        <div class="d-flex mb-2">
-                                            <i class="fas fa-star text-warning me-1"></i>
-                                            <i class="fas fa-star text-warning me-1"></i>
-                                            <i class="fas fa-star text-warning me-1"></i>
-                                            <i class="far fa-star text-warning me-1"></i>
-                                            <i class="far fa-star text-warning me-1"></i>
+                                <div class="card-body ps-1">
+                                    <div class="card-text mb-2">{{ $product->nom }}</div>
+                                    <div class="d-flex mb-2">
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <i class="far fa-star text-warning me-1"></i>
+                                        <i class="far fa-star text-warning me-1"></i>
 
-                                        </div>
-                                        <h3 class="x-text-fs6">{{ $product->prix . ' XOF' }} </h3>
-<a href="{{ route('produit', ['product' => $product->id]) }}"
-                                class="btn btn-success  text-white text-decoration-none text-dark">Voir les détails</a>
                                     </div>
+                                    <h3 class="x-text-fs6">{{ $product->prix . ' XOF' }} </h3>
+                                    <a href="{{ route('produit', ['product' => $product->id]) }}"
+                                        class="btn btn-success  text-white text-decoration-none text-dark">Voir les
+                                        détails</a>
                                 </div>
+                            </div>
                         </div>
                     @endforeach
                 @endif

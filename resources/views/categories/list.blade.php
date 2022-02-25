@@ -11,11 +11,11 @@
 
 
 
-    <div class="row py-5 px-3 d-desktop">
+    <div class="row py-5 px-3 ">
 
                 @if (sizeof($categoriesall) > 0)
                     @foreach ($categoriesall as $categorie)
-                        <div class="col-2 mb-3">
+                        <div class="col-2 mb-3 d-desktop">
                             <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
                                 class="btn x-btn-products x-text-fs4 px-3 w-100 py-2">{{ $categorie->libelle }} <i
                                     class="fas fa-chevron-right ms-3 text-warning"></i> </a>
