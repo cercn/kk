@@ -180,7 +180,7 @@
                             </div>
                         @endforeach
                         <div class="col-12 mb-3">
-                            <a href="" class="btn x-btn-products x-text-fs4 px-3 w-100 py-2 text-warning">Toutes les
+                            <a href="{{ route('allcategories') }}" class="btn x-btn-products x-text-fs4 px-3 w-100 py-2 text-warning">Toutes les
                                 catégories<i class="fas fa-chevron-right ms-3 text-warning"></i> </a>
                         </div>
                     @endif
@@ -355,46 +355,7 @@
         </section>
 
         <div class="bg-warning p-2 py-4 container-fluid"></div>
-        <section class="p-4 bg-dark text-center">
-            <div>
-                <h3 class="text-white">Nos fournisseurs</h3>
-            </div>
-
-            <div class="text-white mt-2"><span class="text-warning">XANOUMI</span> .com </div>
-
-            <div class="container px-5 text-white d-flex justify-content-center mt-2 d-desktop">
-                <div class="col-6 d-flex justify-content-between">
-                    <span class="text-white">Bénin</span>
-                    <span class="text-white">Togo</span>
-                    <span class="text-white">Nigéria</span>
-                    <span class="text-white">Burkina-faso</span>
-                    <span class="text-white">France</span>
-                    <span class="text-white">Chine</span>
-                    <span class="text-white">Italie</span>
-                    <span class="text-white">Australie</span>
-                    <span class="text-white">Etats-Unis</span>
-                </div>
-            </div>
-
-            <div class="container-fluid px-3 text-white d-flex justify-content-center mt-2 flex-wrap d-mobile">
-
-                    <span class="text-white me-2 ">Bénin</span>
-                    <span class="text-white me-2 ">Togo</span>
-                    <span class="text-white me-2 ">Nigéria</span>
-                    <span class="text-white me-2 ">Burkina-faso</span>
-                    <span class="text-white me-2 ">France</span>
-                    <span class="text-white me-2 ">Chine</span>
-                    <span class="text-white me-2 ">Italie</span>
-                    <span class="text-white me-2 ">Australie</span>
-                    <span class="text-white me-2 ">Etats-Unis</span>
-
-            </div>
-
-
-
-
-
-        </section>
+        
     </div>
 @endSection
 

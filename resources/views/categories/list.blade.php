@@ -6,16 +6,29 @@
         <div class="d-flex justify-content-center">
             <div class="bg-warning  x-deco"></div>
         </div>
-      
+
     </section>
 
 
 
-    <div class="row py-5 px-3">
+    <div class="row py-5 px-3 d-desktop">
 
                 @if (sizeof($categoriesall) > 0)
                     @foreach ($categoriesall as $categorie)
                         <div class="col-2 mb-3">
+                            <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
+                                class="btn x-btn-products x-text-fs4 px-3 w-100 py-2">{{ $categorie->libelle }} <i
+                                    class="fas fa-chevron-right ms-3 text-warning"></i> </a>
+                        </div>
+                    @endforeach
+                @endif
+    </div>
+
+    <div class="container-fluid px-3 py-5 d-mobile">
+
+                @if (sizeof($categoriesall) > 0)
+                    @foreach ($categoriesall as $categorie)
+                        <div class="col-12 mb-3">
                             <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
                                 class="btn x-btn-products x-text-fs4 px-3 w-100 py-2">{{ $categorie->libelle }} <i
                                     class="fas fa-chevron-right ms-3 text-warning"></i> </a>

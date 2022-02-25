@@ -99,10 +99,7 @@
     object-fit: cover;
 }
 
-.x-product-iframe {
-    width: 700px !important;
-    height: 400px !important;
-}
+
 
 .xanoumi-circle {
     position: absolute;
@@ -158,6 +155,10 @@
     }
     .x-hp-title{
         font-size: 18px;
+    }
+    .x-product-iframe {
+        width: 700px !important;
+        height: 400px !important;
     }
 }
 
@@ -234,6 +235,11 @@
     }
     .custom-trigger-right{
         right: 30px;
+    }
+
+    .x-product-iframe {
+        width: 100% !important;
+        height: 300px !important;
     }
 }
 

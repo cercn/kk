@@ -11,20 +11,20 @@
     </section>
 
 
-    <section class="container-fluid mb-5 py-4">
+    <section class="container-fluid mb-5 py-4 d-desktop">
         <div class="row">
             <div class="col-7 d-flex justify-content-center position-relative">
-               <div class="xanoumi-circle d-flex align-items-center justify-content-center fw-bold" > <span class="text-warning" >XANOUMI</span> .com </div>
+                <div class="xanoumi-circle d-flex align-items-center justify-content-center fw-bold"> <span
+                        class="text-warning">XANOUMI</span> .com </div>
                 @isset($product->link3D)
- <div class="sketchfab-embed-wrapper "> <iframe title="[FREE] BAPE x Reebok Club C 85 White Sneaker"
-                        frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                        execution-while-out-of-viewport execution-while-not-rendered web-share
-                        src="{{$product->link3D.'?ui_infos=0&ui_inspector=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_annotations=0'}}"
-                        class="x-product-iframe"> </iframe> </div>
+                    <div class="sketchfab-embed-wrapper "> <iframe title="[FREE] BAPE x Reebok Club C 85 White Sneaker"
+                            frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                            allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                            execution-while-out-of-viewport execution-while-not-rendered web-share
+                            src="{{ $product->link3D . '?ui_infos=0&ui_inspector=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_annotations=0' }}"
+                            class="x-product-iframe"> </iframe> </div>
                 @else
-                                    <img src="{{ asset($product->image) }}" alt="" class="x-product-img">
-
+                    <img src="{{ asset($product->image) }}" alt="" class="x-product-img">
                 @endisset
             </div>
 
@@ -45,13 +45,59 @@
 
                 <h3 class="x-text-fs4 ">PRIX</h3>
 
-                <h2 class="x-text-size-xs">{{ $product->prix.' XOF' }}</h2>
+                <h2 class="x-text-size-xs">{{ $product->prix . ' XOF' }}</h2>
 
                 <a href="" class="btn btn-warning rounded-pill p-1 px-3 text-white mb-3"> Ajouter au panier</a>
 
                 <h6>Description du produit </h6>
 
                 <div class="text-justify col-8">
+                    {{ $product->description }} </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid mb-5 py-4 d-mobile">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center position-relative">
+                
+                @isset($product->link3D)
+                    <div class="sketchfab-embed-wrapper "> <iframe title="[FREE] BAPE x Reebok Club C 85 White Sneaker"
+                            frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                            allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                            execution-while-out-of-viewport execution-while-not-rendered web-share
+                            src="{{ $product->link3D . '?ui_infos=0&ui_inspector=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_annotations=0' }}"
+                            class="x-product-iframe"> </iframe> </div>
+                @else
+                    <img src="{{ asset($product->image) }}" alt="" class="x-product-img">
+                @endisset
+            </div>
+
+            <div class="col-12">
+                <h1 class="x-text-size-md mb-2">{{ $product->nom }}</h1>
+
+                <div class="x-text-fs4 mb-2">
+                    Marque : {{ $product->marque }}
+                </div>
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning me-1"></i>
+                    <i class="fas fa-star text-warning me-1"></i>
+                    <i class="fas fa-star text-warning me-1"></i>
+                    <i class="far fa-star text-warning me-1"></i>
+                    <i class="far fa-star text-warning me-1"></i>
+
+                </div>
+
+                <h3 class="x-text-fs4 ">PRIX</h3>
+
+                <h2 class="x-text-size-xs">{{ $product->prix . ' XOF' }}</h2>
+
+                <a href="" class="btn btn-warning rounded-pill p-1 px-3 text-white mb-3"> Ajouter au panier</a>
+
+                <h6>Description du produit </h6>
+
+                <div class="text-justify col-12">
                     {{ $product->description }} </div>
 
             </div>
@@ -88,5 +134,4 @@
             }
         });
     </script>
-
 @endpush

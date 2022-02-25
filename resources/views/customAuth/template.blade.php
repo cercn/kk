@@ -27,24 +27,24 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/all.css')}}">
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
-   
+
 </head>
 <body>
 
 <header>
     <div class="container-fluid d-flex justify-content-end py-3 ">
-       <a href="{{ route('accueil') }}" class="text-decoration-none text-dark"><h1 class="x-text-fs8"> <span class="text-warning">XANOUMI</span> .COM</h1></a> 
+       <a href="{{ route('accueil') }}" class="text-decoration-none text-dark"><h1 class="x-text-fs8"> <span class="text-warning">XANOUMI</span> .COM</h1></a>
     </div>
 </header>
 
 <main>
- <div class="container-fluid py-5 x-auth-container">
+ <div class="container-fluid py-5 x-auth-container d-desktop">
     <div class="container py-4 d-flex justify-content-center">
         <div class="row d-flex align-items-center">
             <div class="col-4">
-                
+
                 @yield('content')
-              
+
             </div>
 
             <div class="col-8 p-5 text-white">
@@ -52,6 +52,19 @@
                 <div class="x-text-fs6">Le meilleur endroit pour faire vos achats</div>
             </div>
         </div>
+    </div>
+ </div>
+
+
+  <div class="container-fluid py-5 x-auth-container d-mobile">
+    <div class="container py-4  px-3 d-flex justify-content-center">
+
+            <div class="col-12">
+
+                @yield('content')
+
+            </div>
+
     </div>
  </div>
 </main>
@@ -62,7 +75,7 @@
 <div class="container">
     <div class="row">
         <div class="col-9 d-flex justify-content-center">
-           
+
         </div>
         <div class="col-3 ">
             <ul class="nav">
@@ -86,7 +99,7 @@
         <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Politique de confidentialité</a></li>
         <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Conditions d'utilisation</a></li>
         <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Informations utilisateur </a></li>
-        <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Guide de demande juridique</a></li>        
+        <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Guide de demande juridique</a></li>
     </ul>
 </div>
 
