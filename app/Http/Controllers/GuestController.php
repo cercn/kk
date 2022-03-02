@@ -97,10 +97,11 @@ class GuestController extends Controller
 
     public function searchProducts(Request $request){
 
-        $results = Product::search($request->product);
+        $results = Product::search($request->input('product'));
 
+        $word = $request->product;
         return view('recherche',[
-            'word' => $request->product,
+            'word' =>$word ,
             'products' => $results
         ]);
     }

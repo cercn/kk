@@ -46,8 +46,9 @@
                 <h3 class="x-text-fs4 ">PRIX</h3>
 
                 <h2 class="x-text-size-xs">{{ $product->prix . ' XOF' }}</h2>
-
-                <a href="" class="btn btn-warning rounded-pill p-1 px-3 text-white mb-3"> Ajouter au panier</a>
+<div id="sessionFlash" class='alert alert-success d-none'>Produit ajouté au panier</div>
+                {{-- <a  href="{{ route('add-to-cart',['id'=> $product->id])}}" class="btn btn-warning rounded-pill p-1 px-3 text-white mb-3 add-to-cart"> Ajouter au panier</a> --}}
+                <button  data-id="{{$product->id}}" class="btn btn-warning rounded-pill p-1 px-3 text-white mb-3 add-to-cart"> Ajouter au panier</button>
 
                 <h6>Description du produit </h6>
 
@@ -61,7 +62,7 @@
     <section class="container-fluid mb-5 py-4 d-mobile">
         <div class="row">
             <div class="col-12 d-flex justify-content-center position-relative">
-                
+
                 @isset($product->link3D)
                     <div class="sketchfab-embed-wrapper "> <iframe title="[FREE] BAPE x Reebok Club C 85 White Sneaker"
                             frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
@@ -93,7 +94,7 @@
 
                 <h2 class="x-text-size-xs">{{ $product->prix . ' XOF' }}</h2>
 
-                <a href="" class="btn btn-warning rounded-pill p-1 px-3 text-white mb-3"> Ajouter au panier</a>
+                <button  data-id="{{$product->id}}" class="btn btn-warning rounded-pill p-1 px-3 text-white mb-3 add-to-cart"> Ajouter au panier</button>
 
                 <h6>Description du produit </h6>
 
@@ -133,5 +134,44 @@
                 console.log('Viewer error');
             }
         });
+
+
+
+
+
+
+
+
+    </script>
+
+    <script>
+
+$(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+
+        $(".add-to-cart").click(function(e){
+                e.preventDefault();
+
+                var product = $(this).attr('data-id');
+
+                let route_url = '/add-to-cart' + '/' + product ;
+                $.ajax({
+                    url: route_url,
+                    type:'GET',
+
+                    success: function(response) {
+                       $('#sessionFlash').removeClass('d-none');
+                       console.log(response);
+                    }
+                });
+            });
+
+        });
+
     </script>
 @endpush

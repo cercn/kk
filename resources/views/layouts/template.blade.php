@@ -23,7 +23,7 @@
         <meta property="twitter:title" content="XANOUMI" />
         <meta property="twitter:description" content="XANOUMI est un site de ecommerce qui vous propose des services de qualité adaptées à vos différents besoins " />
         <meta property="twitter:image" content="{{ asset('img/xanoumi_logo.png')}}" />
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/all.min.css')}}">
 
@@ -43,7 +43,7 @@
 @include ('layouts.footer')
 
     <!-- JavaScript -->
-
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     @stack('scripts')
 </body>

@@ -99,8 +99,6 @@
     object-fit: cover;
 }
 
-
-
 .xanoumi-circle {
     position: absolute;
     bottom: 5px;
@@ -153,7 +151,7 @@
         object-fit: cover;
         background-color: #525d6a;
     }
-    .x-hp-title{
+    .x-hp-title {
         font-size: 18px;
     }
     .x-product-iframe {
@@ -167,10 +165,10 @@
 }
 
 @media screen and (max-width: 769px) {
-    .card-best{
+    .card-best {
         width: 300px;
     }
-    .x-hp-title{
+    .x-hp-title {
         font-size: 16px;
     }
     .x-carousel-img {
@@ -205,7 +203,7 @@
         display: none !important;
     }
 
-    .d-desktop-flex{
+    .d-desktop-flex {
         display: none !important;
     }
 
@@ -238,10 +236,10 @@
         height: 27px;
     }
 
-    .custom-trigger-left{
+    .custom-trigger-left {
         left: 30px;
     }
-    .custom-trigger-right{
+    .custom-trigger-right {
         right: 30px;
     }
 
@@ -252,18 +250,14 @@
 }
 
 @media screen and (max-width: 321px) {
-.card-product{
-    width: 280px;
+    .card-product {
+        width: 280px;
+    }
+
+    .x-hp-title {
+        font-size: 14px;
+    }
 }
-
-.x-hp-title{
-    font-size: 14px;
-}
-
-
-}
-
-
 
 .x-text-ellipsis {
     overflow: hidden;
