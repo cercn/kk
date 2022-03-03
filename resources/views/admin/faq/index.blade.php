@@ -41,10 +41,15 @@
 
               @foreach($faqs as $faq)
 
+              @php
+                  $question = Str::words($faq->question, 10, '');
+                  $reponse = Str::words($faq->reponse, 10, '');
+              @endphp
+
                 <tr>
 
-                  <td>{{$faq->question }}</td>
-                  <td>{{$faq->reponse }}</td>
+                  <td>{{$question.'...' }}</td>
+                  <td>{{$reponse.'...' }}</td>
 
                   <td>
 

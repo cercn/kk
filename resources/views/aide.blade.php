@@ -51,7 +51,7 @@
 
                 <div class="accordion-item rounded-0 ">
                     <h2 class="accordion-header" id="{{ 'heading' . $dataId }}">
-                        <button class="accordion-button rounded-0 x-accordion-item " type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button rounded-0 x-accordion-item text-justify " type="button" data-bs-toggle="collapse"
                             data-bs-target="{{ '#collapse' . $dataId }}" aria-expanded="true"
                             aria-controls="{{ 'collapse' . $dataId }}">
                             {{ $faq->question }}

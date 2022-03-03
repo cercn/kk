@@ -120,5 +120,6 @@ class FaqController extends Controller
     public function destroy($id)
     {
         Faq::destroy($id);
+        return redirect()->route('faqs.index');
     }
 }
