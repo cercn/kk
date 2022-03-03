@@ -94,7 +94,9 @@
                               </a>
                             </div>
                           </li>
-    
+
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0)">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -102,13 +104,51 @@
                             </a>
                         </li>
 
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0)">
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                                 <span class="nav-link-text">Stocks</span>
                             </a>
                         </li>
+
+                         <li class="nav-item dropdown">
+                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-archive" aria-hidden="true"></i> FAQS <i class="fa fa-chevron-right ml-i" ></i>
+                            </a>
+                            <div class="dropdown-menu  dropdown-menu-right ">
+
+                                <a href="{{ route('faqs.create') }}" class="dropdown-item">
+                                    <i class="fa fa-archive" aria-hidden="true"></i>
+                                    <span>nouvelle question </i></span>
+                                  </a>
+                              <div class="dropdown-divider"></div>
+                              <a href="{{ route('faqs.index') }}" class="dropdown-item">
+                                <i class="fa fa-archive" aria-hidden="true"></i>
+                                <span>Liste des questions</span>
+                              </a>
+                            </div>
+                          </li>
+
+
+                          <li class="nav-item dropdown">
+                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-archive" aria-hidden="true"></i> Pages <i class="fa fa-chevron-right ml-i" ></i>
+                            </a>
+                            <div class="dropdown-menu  dropdown-menu-right ">
+
+                                <a href="{{ route('products.create') }}" class="dropdown-item">
+                                    <i class="fa fa-archive" aria-hidden="true"></i>
+                                    <span>nouvelle page </i></span>
+                                  </a>
+                              <div class="dropdown-divider"></div>
+                              <a href="{{ route('products.index') }}" class="dropdown-item">
+                                <i class="fa fa-archive" aria-hidden="true"></i>
+                                <span>Liste des pages</span>
+                              </a>
+                            </div>
+                          </li>
+
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users')}}">
@@ -117,7 +157,7 @@
                             </a>
                         </li>
 
-                        
+
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -128,8 +168,8 @@
                                 {{ csrf_field() }}
                             </form>
                         </li>
-                        
-                        
+
+
 
                     </ul>
                     <!-- Divider -->
@@ -182,7 +222,7 @@
 
                         </li>
 
-                        
+
 
                     </ul>
                     <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
@@ -243,13 +283,13 @@
 
                     </div>
 
-                   
+
                     <!-- Card stats -->
                    @yield('cards')
                 </div>
             </div>
         </div>
-  
+
         <!-- Page content -->
         <div class="container-fluid mt--6">
             @yield('content')

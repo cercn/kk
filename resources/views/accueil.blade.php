@@ -154,17 +154,19 @@
                     @endif
                 </div>
 
-                <div class="row d-desktop-flex ">
+                <div class="row d-desktop-flex columns-hp ">
 
                     @if (sizeof($categories) > 0)
                         @foreach ($categories as $categorie)
                             <div class="col-2 mb-3">
                                 <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
-                                    class="btn x-btn-products x-text-fs4 px-3 w-100 py-2">{{ $categorie->libelle }} <i
+                                    class="btn x-btn-products x-text-fs4 px-3 w-100 py-2"><img src="{{ asset('img/category.svg')}}" alt="" class="category">{{ $categorie->libelle }} <i
                                         class="fas fa-chevron-right ms-3 text-warning"></i> </a>
                             </div>
                         @endforeach
                     @endif
+
+
 
 
                 </div>
@@ -175,7 +177,7 @@
                         @foreach ($categories as $categorie)
                             <div class="col-12  mb-3">
                                 <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
-                                    class="btn x-btn-products x-text-fs4 px-3 w-100 py-2">{{ $categorie->libelle }} <i
+                                    class="btn x-btn-products x-text-fs4 px-3 w-100 py-2"> {{ $categorie->libelle }} <i
                                         class="fas fa-chevron-right ms-3 text-warning"></i> </a>
                             </div>
                         @endforeach
@@ -360,7 +362,7 @@
 @endSection
 
 @push('scripts')
-   
+
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
     <script>

@@ -17,16 +17,13 @@ class Categorie extends Model
         'libelle',
         'description',
         'file',
-       
+
     ];
 
     public static $rules = [
         'libelle'       => 'required|string|max:15',
         'description'    => 'required|string',
-       
+
     ];
 
-    public function vehicules(){
-        return $this->hasMany(Vehicule::class);
-    }
 }

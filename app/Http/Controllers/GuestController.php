@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Categorie;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Faq;
+
 
 class GuestController extends Controller
 {
@@ -105,6 +107,12 @@ class GuestController extends Controller
             'products' => $results
         ]);
     }
+
+
+
+    public function  help(){
+        $faqs = Faq::all();
+        return view('aide',['faqs' => $faqs]);    }
 
 
 }

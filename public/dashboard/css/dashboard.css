@@ -82,3 +82,9 @@ button.bg-success:focus {
     color: #fff;
     background-color: var(--green);
 }
+
+.alert-success {
+    color: #fff;
+    border-color: var(--green) !important;
+    background-color: var(--green) !important;
+}

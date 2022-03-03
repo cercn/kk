@@ -32,7 +32,7 @@
             @endguest
                 <li class="nav-item"><a href="{{ route('cart') }}" class="nav-link x-nav-link text-muted"> <i class="fas fa-shopping-cart"></i>
                         Panier </a></li>
-                <li class="nav-item "><a href="" class="nav-link x-nav-link text-muted"> <i
+                <li class="nav-item "><a href="{{ route('help') }}" class="nav-link x-nav-link text-muted"> <i
                             class="fas fa-question-circle"></i> Aide </a></li>
 
             </ul>

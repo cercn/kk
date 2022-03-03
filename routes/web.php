@@ -8,6 +8,8 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RentController;
 use App\Http\Controllers\cartController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,9 @@ Route::get('/add-to-cart/{id}',[cartController::class,'addToCart'])->name('add-t
 Route::put('/update-to-cart',[cartController::class,'updateToCart'])->name('update-cart');
 Route::delete('/delete-to-cart',[cartController::class,'deleteToCart'])->name('delete-cart');
 
+Route::get('/foire-aux-questions',[GuestController::class,'help'])->name('help');
+
+
 
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -50,6 +55,10 @@ Route::middleware(['admin:admin'])->group(function(){
     Route::resource('/categorie',CategorieController::class);
 
     Route::resource('/products',ProductController::class);
+
+    Route::resource('/faqs',FaqController::class);
+
+    Route::resource('/pages',PageController::class);
 
     Route::get('/utilisateurs',[UserController::class,'index'])->name('users');
 
