@@ -42,7 +42,7 @@
 
     <div class="container py-3 ">
 
-        <form id="newsletterForm" name="newsletterForm" class="d-desktop" method="post">
+        <form id="newsletterForm" name="newsletterForm" class="d-desktop elementA" method="post">
             @csrf()
             <div class="row">
                 <div class="col-3">
@@ -57,25 +57,29 @@
 
                 </div>
                 <div class="col-2 text-center">
-                    <button type="submit" class="btn btn-warning text-white rounded-pill px-5 " id='newsletter-btn'>
-                        Envoyer &nbsp; <i class="fas fa-paper-plane"></i> </button>
+                    <button type="submit" class="btn btn-warning text-white rounded-pill px-4 " id='newsletter-btn'>
+                       <i class="fas fa-spinner fa-pulse text-white me-2 d-none" id="FormNewsletterIcone"></i> Envoyer &nbsp; <i class="fas fa-paper-plane"></i> </button>
 
                 </div>
             </div>
         </form>
 
-        <form action="" class="row d-mobile">
+        <form id="newsletterForm" name="newsletterForm" method="post" class="row d-mobile">
+        @csrf()
             <div class="col-12 mb-3">
                 <label for="" class="text-label text-muted"> Abonnez-vous à la newsletter </label>
 
             </div>
             <div class="col-12 mb-3">
-                <input type="email" name="email" id="email" class="form-control rounded-pill"
+                <input type="email" name="email"  id="emailNewsletter" class="form-control rounded-pill"
                     placeholder="Entrer votre adresse email">
+
+               <span class="" id="newsletterResponse"></span>
+
 
             </div>
             <div class="col-12 ">
-                <button type="submit" class="btn btn-warning text-white rounded-pill px-3 x-fs-3"> Envoyer &nbsp; <i
+                <button type="submit" class="btn btn-warning text-white rounded-pill px-3 x-fs-3" id='newsletter-btn'> <i class="fas fa-spinner fa-pulse text-white me-2 d-none" id="FormNewsletterIcone"></i> Envoyer &nbsp; <i
                         class="fas fa-paper-plane"></i> </button>
 
             </div>
@@ -159,6 +163,8 @@
     <script>
         $(document).ready(function() {
 
+            $('.elementA').addClass('d-none');
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -168,6 +174,8 @@
             $("#newsletter-btn").click(function(e) {
 
                 e.preventDefault();
+
+                $('#FormNewsletterIcone').removeClass('d-none');
 
                 let email = $('#emailNewsletter').val();
 
@@ -183,12 +191,14 @@
                     type: 'POST',
                     data: formData,
                     success: function(response) {
+                        $('#FormNewsletterIcone').addClass('d-none');
                         $('#newsletterForm').trigger("reset");
                         $('#newsletterResponse').removeClass("text-danger");
                          $('#newsletterResponse').addClass("text-success");
                          $('#newsletterResponse').text(response);
                     },
                     error: function(error){
+                        $('#FormNewsletterIcone').addClass('d-none');
                         $('#newsletterForm').trigger("reset");
                         $('#newsletterResponse').removeClass("text-success");
                         $('#newsletterResponse').addClass("text-danger");
