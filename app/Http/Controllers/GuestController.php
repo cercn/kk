@@ -9,6 +9,8 @@ use App\Models\Categorie;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Faq;
+use App\Models\Newsletter;
+use Illuminate\Support\Facades\Validator;
 
 
 class GuestController extends Controller
@@ -112,7 +114,27 @@ class GuestController extends Controller
 
     public function  help(){
         $faqs = Faq::all();
-        return view('aide',['faqs' => $faqs]);    }
+        return view('aide',['faqs' => $faqs]);
+      }
+
+
+    public function registerToNewsletter(Request $request){
+
+        $validator = Validator::make($request->all(), Newsletter::$rules);
+
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+            return response()->json($errors,401);
+        }
+
+
+        $newsletter = new Newsletter;
+        $newsletter->email = $request->email;
+        $newsletter->save();
+
+        return response()->json('Votre email a été bien enregistré, Nous vous enverrons les derniers arrivages dans votre boîte mail.',200);
+
+    }
 
 
 }

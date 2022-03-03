@@ -10,6 +10,8 @@ use App\Http\Controllers\RentController;
 use App\Http\Controllers\cartController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\NewsletterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +42,9 @@ Route::delete('/delete-to-cart',[cartController::class,'deleteToCart'])->name('d
 
 Route::get('/foire-aux-questions',[GuestController::class,'help'])->name('help');
 
+Route::post('/newsletter/register',[GuestController::class,'registerToNewsletter'])->name('newsletter-register');
+
+
 
 
 
@@ -62,6 +67,8 @@ Route::middleware(['admin:admin'])->group(function(){
 
     Route::get('/utilisateurs',[UserController::class,'index'])->name('users');
 
-    Route::get('/locations',[RentController::class,'index'])->name('allrent');
+    Route::get('/newsletters',[NewsletterController::class,'index'])->name('newsletter');
+
+
 
 });

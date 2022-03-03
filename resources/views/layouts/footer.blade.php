@@ -42,23 +42,26 @@
 
     <div class="container py-3 ">
 
-        <form action="" class=" d-desktop">
-        <div class="row">
-            <div class="col-3">
-                <label for="" class="text-label text-muted"> Abonnez-vous à la newsletter </label>
+        <form id="newsletterForm" name="newsletterForm" class="d-desktop" method="post">
+            @csrf()
+            <div class="row">
+                <div class="col-3">
+                    <label for="" class="text-label text-muted"> Abonnez-vous à la newsletter </label>
 
-            </div>
-            <div class="col-7">
-                <input type="email" name="email" id="email" class="form-control rounded-pill"
-                    placeholder="Entrer votre adresse email">
+                </div>
+                <div class="col-7">
+                    <input type="email" name="email" id="emailNewsletter" class="form-control rounded-pill"
+                        placeholder="Entrer votre adresse email">
 
-            </div>
-            <div class="col-2 text-center">
-                <button type="submit" class="btn btn-warning text-white rounded-pill px-5"> Envoyer &nbsp; <i
-                        class="fas fa-paper-plane"></i> </button>
+                        <span class="" id="newsletterResponse"></span>
 
+                </div>
+                <div class="col-2 text-center">
+                    <button type="submit" class="btn btn-warning text-white rounded-pill px-5 " id='newsletter-btn'>
+                        Envoyer &nbsp; <i class="fas fa-paper-plane"></i> </button>
+
+                </div>
             </div>
-        </div>
         </form>
 
         <form action="" class="row d-mobile">
@@ -150,3 +153,52 @@
             <span class="text-muted x-text-copy"> &copy XANOUMI .com | Tous droits réservés.</span>
         </div>
 </footer>
+
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $("#newsletter-btn").click(function(e) {
+
+                e.preventDefault();
+
+                let email = $('#emailNewsletter').val();
+
+                var route_url = "{{ route('newsletter-register') }}";
+
+                var formData = {
+                    'email': email,
+                };
+
+
+                $.ajax({
+                    url: route_url,
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        $('#newsletterForm').trigger("reset");
+                        $('#newsletterResponse').removeClass("text-danger");
+                         $('#newsletterResponse').addClass("text-success");
+                         $('#newsletterResponse').text(response);
+                    },
+                    error: function(error){
+                        $('#newsletterForm').trigger("reset");
+                        $('#newsletterResponse').removeClass("text-success");
+                        $('#newsletterResponse').addClass("text-danger");
+                        $('#newsletterResponse').text(error.responseJSON.email[0]);
+
+                    }
+
+                });
+            });
+
+        });
+    </script>
+@endpush

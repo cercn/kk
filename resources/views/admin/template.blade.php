@@ -149,6 +149,12 @@
                             </div>
                           </li>
 
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('newsletter')}}">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="nav-link-text">newsletter</span>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users')}}">
