@@ -13,6 +13,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\NewsletterController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Page extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'slug',
+        'title',
+        'description'
+    ];
+
+    public static  $rules = [
+        'title' => 'required',
+        'description' => 'required'
+
+    ];
 }

@@ -137,12 +137,12 @@
                             </a>
                             <div class="dropdown-menu  dropdown-menu-right ">
 
-                                <a href="{{ route('products.create') }}" class="dropdown-item">
+                                <a href="{{ route('pages.create') }}" class="dropdown-item">
                                     <i class="fa fa-archive" aria-hidden="true"></i>
                                     <span>nouvelle page </i></span>
                                   </a>
                               <div class="dropdown-divider"></div>
-                              <a href="{{ route('products.index') }}" class="dropdown-item">
+                              <a href="{{ route('pages.index') }}" class="dropdown-item">
                                 <i class="fa fa-archive" aria-hidden="true"></i>
                                 <span>Liste des pages</span>
                               </a>
