@@ -324,6 +324,8 @@
     <script src=" {{ asset('dashboard/vendor/chart.js/dist/Chart.extension.js')}}"></script>
     <!-- Argon JS -->
     <script src="{{ asset('dashboard/js/argon.js?v=1.2.0')}}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>
