@@ -42,7 +42,7 @@
 
     <div class="container py-3 ">
 
-        <form id="newsletterForm" name="newsletterForm" class="d-desktop elementA" method="post">
+        <form id="newsletterForm" name="newsletterForm" class="d-desktop " method="post">
             @csrf()
             <div class="row">
                 <div class="col-3">
@@ -64,22 +64,22 @@
             </div>
         </form>
 
-        <form id="newsletterForm" name="newsletterForm" method="post" class="row d-mobile">
+        <form id="newsletterFormMobile" name="newsletterFormMobile" method="post" class="row d-mobile">
         @csrf()
             <div class="col-12 mb-3">
                 <label for="" class="text-label text-muted"> Abonnez-vous à la newsletter </label>
 
             </div>
             <div class="col-12 mb-3">
-                <input type="email" name="email"  id="emailNewsletter" class="form-control rounded-pill"
+                <input type="email" name="email"  id="emailNewsletterMobile" class="form-control rounded-pill"
                     placeholder="Entrer votre adresse email">
 
-               <span class="" id="newsletterResponse"></span>
+               <span class="" id="newsletterResponseMobile"></span>
 
 
             </div>
             <div class="col-12 ">
-                <button type="submit" class="btn btn-warning text-white rounded-pill px-3 x-fs-3" id='newsletter-btn'> <i class="fas fa-spinner fa-pulse text-white me-2 d-none" id="FormNewsletterIcone"></i> Envoyer &nbsp; <i
+                <button type="submit" class="btn btn-warning text-white rounded-pill px-3 x-fs-3" id='newsletter-btn-mobile'> <i class="fas fa-spinner fa-pulse text-white me-2 d-none" id="FormNewsletterIconeMobile"></i> Envoyer &nbsp; <i
                         class="fas fa-paper-plane"></i> </button>
 
             </div>
@@ -92,19 +92,19 @@
         <div class="row ">
             <div class="col-9 d-flex justify-content-center d-desktop">
                 <nav class="nav d-flex">
-                    <a href="" class="nav-link text-dark"> Service client</a>
-                    <a href="" class="nav-link text-dark"> A propos de nous</a>
-                    <a href="" class="nav-link text-dark">Nous contacter</a>
+                    <a href="{{ route('page',['slug' => 'service-client'])}}" class="nav-link text-dark"> Service client</a>
+                    <a href="{{ route('page',['slug' => 'a-propo-de-nous'])}}" class="nav-link text-dark"> A propos de nous</a>
+                    <a href="{{ route('page',['slug' => 'nous-contacter'])}}" class="nav-link text-dark">Nous contacter</a>
                 </nav>
             </div>
             <div class="col-3 ">
                 <ul class="nav">
-                    <li class="nav-item"><a href="" class="nav-link text-muted"> <i class="fab fa-facebook"></i>
+                    <li class="nav-item"><a href="https://facebook.com/" class="nav-link text-muted"> <i class="fab fa-facebook"></i>
                         </a></li>
-                    <li class="nav-item"><a href="" class="nav-link text-muted"> <i class="fab fa-linkedin"></i>
+                    <li class="nav-item"><a href="https://linkedin.com/" class="nav-link text-muted"> <i class="fab fa-linkedin"></i>
                         </a></li>
 
-                    <li class="nav-item"><a href="" class="nav-link text-muted"> <i class="fab fa-twitter"></i>
+                    <li class="nav-item"><a href="https://twitter.com/" class="nav-link text-muted"> <i class="fab fa-twitter"></i>
                         </a></li>
 
                 </ul>
@@ -117,16 +117,15 @@
         <div class="row">
             <div class="col-9 ">
 
-                <a href="" class="nav-link text-dark"> Service client</a>
-                <a href="" class="nav-link text-dark"> A propos de nous</a>
-                <a href="" class="nav-link text-dark">Nous contacter</a>
+                <a href="{{ route('page',['slug' => 'service-client'])}}" class="nav-link text-dark"> Service client</a>
+                <a href="{{ route('page',['slug' => 'a-propos-de-nous'])}}" class="nav-link text-dark"> A propos de nous</a>
+                <a href="{{ route('page',['slug' => 'nous-contacter'])}}" class="nav-link text-dark">Nous contacter</a>
 
             </div>
             <div class="col-3">
-                <a href="" class="nav-link text-muted"> <i class="fab fa-facebook"></i> </a>
-                <a href="" class="nav-link text-muted"> <i class="fab fa-linkedin"></i> </a>
-
-                <a href="" class="nav-link text-muted"> <i class="fab fa-twitter"></i> </a>
+                <a href="https://facebook.com/" class="nav-link text-muted"> <i class="fab fa-facebook"></i> </a>
+                <a href="https://linkedin.com/" class="nav-link text-muted"> <i class="fab fa-linkedin"></i> </a>
+                <a href="https://twitter.com/" class="nav-link text-muted"> <i class="fab fa-twitter"></i> </a>
 
             </div>
         </div>
@@ -138,17 +137,17 @@
 
         <div class="container d-flex justify-content-center py-3">
             <ul class="nav x-nav">
-                <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Politique de liste
+                <li class="nav-item"><a href="{{ route('page',['slug' => 'politique-de-liste-de-produits'])}}" class="nav-link text-muted x-nav-footer-text">Politique de liste
                         de produits </a></li>
-                <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Protection de la
+                <li class="nav-item"><a href="{{ route('page',['slug' => 'protection-de-la-propriete-intellectuelle'])}}" class="nav-link text-muted x-nav-footer-text">Protection de la
                         propriété intellectuelle</a></li>
-                <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Politique de
+                <li class="nav-item"><a href="{{ route('page',['slug' => 'politique-de-confidentialite'])}}" class="nav-link text-muted x-nav-footer-text">Politique de
                         confidentialité</a></li>
-                <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Conditions
+                <li class="nav-item"><a href="{{ route('page',['slug' => 'conditions-d-utilisation'])}}" class="nav-link text-muted x-nav-footer-text">Conditions
                         d'utilisation</a></li>
-                <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Informations
+                <li class="nav-item"><a href="{{ route('page',['slug' => 'informations-utilisateur'])}}" class="nav-link text-muted x-nav-footer-text">Informations
                         utilisateur </a></li>
-                <li class="nav-item"><a href="" class="nav-link text-muted x-nav-footer-text">Guide de demande
+                <li class="nav-item"><a href="{{ route('page',['slug' => 'guide-de-demande-juridique'])}}" class="nav-link text-muted x-nav-footer-text">Guide de demande
                         juridique</a></li>
             </ul>
         </div>
@@ -163,7 +162,6 @@
     <script>
         $(document).ready(function() {
 
-            $('.elementA').addClass('d-none');
 
             $.ajaxSetup({
                 headers: {
@@ -203,6 +201,46 @@
                         $('#newsletterResponse').removeClass("text-success");
                         $('#newsletterResponse').addClass("text-danger");
                         $('#newsletterResponse').text(error.responseJSON.email[0]);
+
+                    }
+
+                });
+            });
+
+
+
+            $("#newsletter-btn-mobile").click(function(e) {
+
+                e.preventDefault();
+
+                $('#FormNewsletterIconeMobile').removeClass('d-none');
+
+                let email = $('#emailNewsletterMobile').val();
+
+                var route_url = "{{ route('newsletter-register') }}";
+
+                var formData = {
+                    'email': email,
+                };
+
+
+                $.ajax({
+                    url: route_url,
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        $('#FormNewsletterIconeMobile').addClass('d-none');
+                        $('#newsletterFormMobile').trigger("reset");
+                        $('#newsletterResponseMobile').removeClass("text-danger");
+                         $('#newsletterResponseMobile').addClass("text-success");
+                         $('#newsletterResponseMobile').text(response);
+                    },
+                    error: function(error){
+                        $('#FormNewsletterIconeMobile').addClass('d-none');
+                        $('#newsletterFormMobile').trigger("reset");
+                        $('#newsletterResponseMobile').removeClass("text-success");
+                        $('#newsletterResponseMobile').addClass("text-danger");
+                        $('#newsletterResponseMobile').text(error.responseJSON.email[0]);
 
                     }
 
