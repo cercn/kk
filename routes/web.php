@@ -45,8 +45,7 @@ Route::get('/foire-aux-questions',[GuestController::class,'help'])->name('help')
 
 Route::post('/newsletter/register',[GuestController::class,'registerToNewsletter'])->name('newsletter-register');
 
-
-
+Route::get('display/pages/{slug}',[GuestController::class,'afficherPageAdmin'])->name('display-page');
 
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -73,3 +72,6 @@ Route::middleware(['admin:admin'])->group(function(){
 
 
 });
+
+
+Route::get('/{slug}',[GuestController::class,'afficherPage'])->name('page');

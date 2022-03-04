@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Page;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use DOMDocument;
+
 
 class PageController extends Controller
 {
@@ -47,13 +50,15 @@ class PageController extends Controller
             return back()->withErrors($errors)->withInput();
         }
 
+        $slug = Str::slug($request->title, '-');
 
         $page = new Page;
+        $page->slug = $slug;
         $page->description = $request->description;
         $page->title = $request->title;
         $page->save();
 
-        session()->flash('success','nouvelle question enregistrée');
+        session()->flash('success','nouvelle page enregistrée');
 
         return redirect()->route('pages.create');
 
@@ -98,13 +103,14 @@ class PageController extends Controller
             return back()->withErrors($errors)->withInput();
         }
 
-
+        $slug = Str::slug($request->slug, '-');
         $page = Page::find($id);
-        $page-> question = $request->question;
-        $page-> reponse = $request->reponse;
+        $page->slug = $slug;
+        $page->description = $request->description;
+        $page->title = $request->title;
         $page->save();
 
-        session()->flash('success','Question '.$page->id.' modifiée avec success');
+        session()->flash('success','Page '.$page->id.' modifiée avec success');
 
         return redirect()->route('pages.index');
     }
@@ -120,4 +126,6 @@ class PageController extends Controller
         Page::destroy($id);
         return redirect()->route('pages.index');
     }
+
+
 }

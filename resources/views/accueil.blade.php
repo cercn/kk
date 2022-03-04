@@ -154,38 +154,75 @@
                     @endif
                 </div>
 
-                <div class="row d-desktop-flex columns-hp ">
+                <div class="row d-desktop-flex ">
 
                     @if (sizeof($categories) > 0)
                         @foreach ($categories as $categorie)
-                            <div class="col-2 mb-3">
-                                <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
-                                    class="btn x-btn-products x-text-fs4 px-3 w-100 py-2"><img src="{{ asset('img/category.svg')}}" alt="" class="category">{{ $categorie->libelle }} <i
-                                        class="fas fa-chevron-right ms-3 text-warning"></i> </a>
+                            <div class="col-2 mb-4">
+                                <div class="x-categories">
+                                    <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
+                                        class="text-decoration-none text-muted text-center">
+                                        <div class="d-flex justify-content-center mb-2">
+                                            <img src="{{ asset('img/category.svg') }}" alt="{{ $categorie->libelle }}"
+                                                class="x-category-img">
+
+                                        </div>
+                                        <p class="text-dark mb-0">{{ $categorie->libelle }}</p>
+
+
+                                    </a>
+                                </div>
                             </div>
                         @endforeach
                     @endif
+
+
 
 
 
 
                 </div>
 
-                <div class="row d-mobile">
+                <div class="row position-relative d-mobile">
 
-                    @if (sizeof($categories) > 0)
-                        @foreach ($categories as $categorie)
-                            <div class="col-12  mb-3">
-                                <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
-                                    class="btn x-btn-products x-text-fs4 px-3 w-100 py-2"> {{ $categorie->libelle }} <i
-                                        class="fas fa-chevron-right ms-3 text-warning"></i> </a>
-                            </div>
-                        @endforeach
-                        <div class="col-12 mb-3">
-                            <a href="{{ route('allcategories') }}" class="btn x-btn-products x-text-fs4 px-3 w-100 py-2 text-warning">Toutes les
-                                catégories<i class="fas fa-chevron-right ms-3 text-warning"></i> </a>
+                    <div class="owl-carousel owl-theme owlstandard">
+                        @if (sizeof($categories) > 0)
+                            @foreach ($categories as $categorie)
+                                <div class="item">
+                                    <div class="col-12 d-flex justify-content-center mb-2">
+                                        <div class="x-categories">
+                                            <a href="{{ route('categorie', ['categorie' => $categorie->libelle]) }}"
+                                                class="text-decoration-none text-muted text-center">
+                                                <div class="d-flex justify-content-center mb-2">
+                                                    <img src="{{ asset('img/category.svg') }}"
+                                                        alt="{{ $categorie->libelle }}" class="x-category-img">
+
+                                                </div>
+                                                <p class="text-dark mb-0 x-text-fs4">{{ $categorie->libelle }}</p>
+
+
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button class="btn  category-btn-left  owlstandardBtnLeft"><img
+                                src="{{ asset('img/chevron-left.svg') }}" alt="prev button"></button>
+                        <button class="btn  category-btn-right owlstandardBtnRight"><img
+                                src="{{ asset('img/chevron-right.svg') }}" alt="next button"></button>
+                    </div>
+
+                    <div class="col-12 mt-4 mb-2 d-flex justify-content-center">
+                            <a href="{{ route('allcategories') }}"
+                                class="btn btn-success x-text-fs4 px-3  py-2 ">Toutes les
+                                catégories<i class="fas fa-chevron-right ms-3 "></i> </a>
                         </div>
-                    @endif
+
                 </div>
             </div>
         </section>
@@ -362,7 +399,6 @@
 @endSection
 
 @push('scripts')
-
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
     <script>

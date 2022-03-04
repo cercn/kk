@@ -1,6 +1,6 @@
 @extends('admin.template')
-@section('title', 'FAQ')
-@section('subtitle' , 'Liste des questions')
+@section('title', 'Pages')
+@section('subtitle' , 'Liste des pages')
 @section('content')
 
 <div class="row">
@@ -10,10 +10,10 @@
         <div class="card-header border-0">
           <div class="row align-items-center">
             <div class="col-8">
-                <h3 class="mb-0">Liste des questions</h3>
+                <h3 class="mb-0">Liste des pages</h3>
             </div>
             <div class="col-4 text-right">
-                <a href="{{ route('faqs.create')}}" class="btn btn-sm btn-dark">Nouvelle question</a>
+                <a href="{{ route('pages.create')}}" class="btn btn-sm btn-dark">Nouvelle page</a>
             </div>
         </div>
         </div>
@@ -29,9 +29,11 @@
             <thead class="thead-light">
               <tr>
 
-                <th scope="col" class="sort" data-sort="image">question</th>
-               <th scope="col" class="sort" data-sort="prix">reponse</th>
-                <th scope="col" class="sort" data-sort="actions">Actions</th>
+                <th scope="col" class="sort" data-sort="image">title</th>
+               <th scope="col" class="sort" data-sort="prix">slug</th>
+                <th scope="col" class="sort" data-sort="resume">resume</th>
+                 <th scope="col" class="sort" data-sort="actions">Actions</th>
+
 
 
 
@@ -39,24 +41,24 @@
             </thead>
             <tbody >
 
-              @foreach($faqs as $faq)
+            @if(sizeof($pages) > 0)
 
-              @php
-                  $question = Str::words($faq->question, 10, '');
-                  $reponse = Str::words($faq->reponse, 10, '');
-              @endphp
+              @foreach($pages as $page)
+
+
 
                 <tr>
 
-                  <td>{{$question.'...' }}</td>
-                  <td>{{$reponse.'...' }}</td>
+                  <td>{{$page->title }}</td>
+                  <td>{{$page->slug}}</td>
+                   <td>{{resume_page_content($page->description)}}</td>
 
                   <td>
 
                     <div class="d-flex justify-content-evently">
-                      <a href="{{ route('faqs.show' , ['faq'=>$faq->id]) }}" class=" mr-2 btn btn-sm btn-primary"><i class="fa fa-eye"></i></a>
-                      <a href="{{ route('faqs.edit' , ['faq'=>$faq->id]) }}" class=" mr-2 btn btn-sm btn-success"><i class="fa fa-pencil-alt"></i></a>
-                      <a href="" class="btn btn-sm btn-danger " type="button" data-toggle="modal" data-target="#{!!  \Illuminate\Support\Str::words($faq->question, 1, '') !!}"><i class="fa fa-trash"></i></a>
+                      <a href="{{ route('display-page' , ['slug' => $page->slug]) }}" class=" mr-2 btn btn-sm btn-primary"><i class="fa fa-eye"></i></a>
+                      <a href="{{ route('pages.edit' , ['page'=>$page->id]) }}" class=" mr-2 btn btn-sm btn-success"><i class="fa fa-pencil-alt"></i></a>
+                      <a href="" class="btn btn-sm btn-danger " type="button" data-toggle="modal" data-target="#{!!  \Illuminate\Support\Str::words($page->page, 1, '') !!}"><i class="fa fa-trash"></i></a>
                     </div>
 
                  {{-- \Illuminate\Support\Str::words pour
@@ -66,7 +68,7 @@
 
                  <div class="modal fade"
 
-                     tabindex="-1" role="dialog" id="{!!  \Illuminate\Support\Str::words($faq->question, 1, '') !!}"
+                     tabindex="-1" role="dialog" id="{!!  \Illuminate\Support\Str::words($page->page, 1, '') !!}"
                      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                      <div class="modal-dialog modal-dialog-centered" role="document">
                          <div class="modal-content">
@@ -84,11 +86,11 @@
                              <div class="modal-body">
 
                                  <form id="delete-reponse"
-                                     action="{{ route('faqs.destroy',['faq'=>$faq->id])}}"
+                                     action="{{ route('pages.destroy',['page'=>$page->id])}}"
                                      method="POST"> @csrf
                                      @method('DELETE')
 
-                                     <p class="font-weight-bold">Etes-vous sure de vouloir supprimer ce faq?
+                                     <p class="font-weight-bold">Etes-vous sure de vouloir supprimer ce page?
                                      </p>
                                      <button class="btn btn-success pull-right"
                                          type="submit">Confirmer</button>
@@ -107,6 +109,15 @@
                   </td>
                 </tr>
               @endforeach
+
+              @else
+
+              <tr>
+                <td colspan="4">Aucune page disponible </td>
+              </tr>
+
+
+              @endif
 
             </tbody>
           </table>

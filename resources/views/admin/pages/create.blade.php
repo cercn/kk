@@ -1,5 +1,8 @@
 @extends('admin.template')
-@include('admin.partials.summernote_css')
+
+
+
+
 @section('title', 'Page')
 @section('subtitle', 'Nouvelle-page')
 @section('content')
@@ -13,7 +16,7 @@
                             <h3 class="mb-0">Ajouter une nouvelle page </h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('faqs.index') }}" class="btn btn-sm btn-dark">Toutes les pages</a>
+                            <a href="{{ route('pages.index') }}" class="btn btn-sm btn-dark">Toutes les pages</a>
                         </div>
                     </div>
                 </div>
@@ -25,16 +28,16 @@
                         {{session::get('success')}}
                 </div>
                 @endif
-                    <form action="{{ route('faqs.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('pages.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="pl-lg-4">
 
                             <div class="row">
-                             <div class="col-md-12 mb-3">
+                             <div class="col-md-12 mb-2">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="description">titre</label>
-                                        <input class="form-control @error('title') is-invalid @enderror"
-                                            placeholder="Tapez votre texte ici"></textarea>
+                                        <label class="form-control-label" for="description">Titre</label>
+                                        <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
+                                            placeholder="Tapez votre texte ici">
                                             @error('title') <div class="text-danger">{{ $message }}</div>@enderror
 
                                     </div>
@@ -42,7 +45,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-control-label" for="description">Contenu</label>
-                                        <textarea name="reponse" id="" cols="30" rows="8" class="summernote form-control @error('description') is-invalid @enderror"
+                                        <textarea name="description" id="tinymce" cols="30" rows="8" class="form-control @error('description') is-invalid @enderror"
                                             placeholder="Tapez votre texte ici"></textarea>
                                           @error('description') <div class="text-danger">{{ $message }}</div>@enderror
 
@@ -67,5 +70,19 @@
         </div>
     </div>
 @endsection
-@include('admin.partials.summernote_js')
+
+@push('scripts')
+<script src="https://cdn.tiny.cloud/1/3w7c9bgk6w991dge1a30743wl3dp54p6jr2iczi5qhol08y8/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+    tinymce.init({
+      selector: 'textarea#tinymce',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+      language: 'fr_FR'
+    });
+  </script>
+@endpush
+
+
 

@@ -10,13 +10,15 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\Faq;
 use App\Models\Newsletter;
+use App\Models\Page;
+
 use Illuminate\Support\Facades\Validator;
 
 
 class GuestController extends Controller
 {
     public function index(){
-        $categories=Categorie::all()->take(7);
+        $categories=Categorie::all()->take(12);
         $c_mostselleds = Categorie::Where('libelle','meilleures ventes')->get()->first();
         $c_mostasks = Categorie::Where('libelle','plus demandés')->get()->first();
         $c_bestoffers = Categorie::Where('libelle','meilleures offres')->get()->first();
@@ -134,6 +136,34 @@ class GuestController extends Controller
 
         return response()->json('Votre email a été bien enregistré, Nous vous enverrons les derniers arrivages dans votre boîte mail.',200);
 
+    }
+
+
+    public function afficherPageAdmin($slug){
+        $page = Page::where('slug',$slug)->get()->first();
+
+        return view('page',['page'=>$page]);
+    }
+
+
+    public function afficherPage($slug){
+
+
+        try {
+
+            $page = Page::where('slug',$slug)->get()->first();
+
+            if($page == null){
+                $data = "La page demandée est actuellement indisponible";
+                return view('errors.404',['data' => $data]);
+            }
+
+            return view('page',['page'=>$page]);
+
+          } catch (Exception $exception){
+            Log::error($exception->getMessage());
+            abort(404);
+          }
     }
 
 

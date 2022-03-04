@@ -85,6 +85,11 @@ button.bg-success:focus {
 
 .alert-success {
     color: #fff;
-    border-color: var(--green) !important;
+    border-color: var(--green) !important;k
     background-color: var(--green) !important;
+}
+
+
+#tinymce{
+    height: 400px;
 }
