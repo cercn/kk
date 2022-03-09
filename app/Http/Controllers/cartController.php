@@ -5,6 +5,7 @@ use App\Models\Categorie;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class cartController extends Controller
 {
@@ -17,6 +18,9 @@ class cartController extends Controller
     }
 
     public function addToCart($id){
+
+
+
         $product = Product::find($id);
 
         $cart = session()->get('cart');
@@ -31,7 +35,7 @@ class cartController extends Controller
                         'image' => '',
                         'quantity' => 1,
                         'prix' => $product->prix
-                    
+
                 ];
 
 

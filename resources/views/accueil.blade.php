@@ -75,7 +75,7 @@
                                                 <i class="far fa-star text-warning me-1"></i>
 
                                             </div>
-                                            <h3 class="x-text-fs6"> {{ $cmostselled->prix . ' XOF' }} </h3>
+                                            <h3 class="x-text-fs5"> {{ $cmostselled->prix . ' XOF' }} </h3>
 
                                         </div>
                                     </div>
@@ -330,7 +330,7 @@
                                                 <i class="far fa-star text-warning me-1"></i>
 
                                             </div>
-                                            <h3 class="x-text-fs6">{{ $mostask->prix . 'XOF' }}</h3>
+                                            <h3 class="x-text-fs5">{{ $mostask->prix . 'XOF' }}</h3>
 
                                         </div>
                                     </div>
